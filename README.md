@@ -1,5 +1,7 @@
 # VeterinaryApp
 
+ Veterinerlik işlemleri için geliştirilmiştir.Spring Boot projesidir.
+ 
 Kullanılan Teknolojiler : 
 
 Spring
@@ -27,13 +29,17 @@ Proje Senaryosu
 
 -Var olan bir kayıt silinebilmeli
 
-Kurulum -VeterinaryApp bir Java uygulamasıdır. Geliştirme yapmak ve çalıştırmak icin JDK ve JRE sisteminizde kurulu olmalıdır:
+-Birim testi olmalı
+
+Kurulum 
+
+-VeterinaryApp bir Java uygulamasıdır. Geliştirme yapmak ve çalıştırmak icin JDK ve JRE sisteminizde kurulu olmalıdır:
 
 sudo apt-get install mysql-server
 
 -Bu komut ile Java Development Kit (JDK) ve Java Runtime Environment (JRE) sisteminize kurulacaktır.
 
--Kurulum yapıldıktan sonra src/main/resources/application.properties dosyası uygun şekilde degiştirilmelidir:
+-Kurulum yapıldıktan sonra src/resources/application.properties dosyası uygun şekilde degiştirilmelidir:
 
 spring.datasource.url = jdbc:mysql://localhost:3306/veternaryapp?useSSL=false spring.datasource.username = root spring.datasource.password = password
 
@@ -49,6 +55,9 @@ CREATE DATABASE veterinaryapp;
 
 ./mvnw package
 
--Bu komut pom.xml dosyasını okuyarak bağımlılıkları indirir, projeyi derler ve paketler. Eger bu asamalar başarı ile sonuçlanmışsa, program aşağıdaki komutla calıştırılabilir:
+-Bu komut pom.xml dosyasını okuyarak bağımlılıkları indirir, testleri çalıştırır, projeyi derler ve paketler. Eger bu asamalar başarı ile sonuçlanmışsa, program aşağıdaki komutla calıştırılabilir:
 
 java -jar target/veterinaryapp-{VERSION}.jar
+
+-Alternatif bir yol olarak, tek komut ile:
+./mvnw spring-boot:run
